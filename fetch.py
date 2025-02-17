@@ -12,6 +12,7 @@ from tqdm import tqdm
 parser = argparse.ArgumentParser(description="Fetch and save pdfs from an archive.org collection")
 parser.add_argument("collection", help="The name of an archive.org collection.")
 parser.add_argument("--delay", type=int, default=3, help="How long to sleep between fetches.")
+parser.add_argument("--year", type=int, default=1700, help="Don't download issues older than this year.")
 
 # pub_chicago-daily-tribune
 
@@ -67,7 +68,7 @@ def main():
         link = f"https://archive.org/download/{identifier}/{filename}"
 
         match = re.search(r'(\d{4})-\d{2}-\d{2}', filename)
-        if match and int(match.group(1)) < 1920:
+        if match and int(match.group(1)) < args.year:
             print(f"Skipping {link}: too old!")
             continue
         
