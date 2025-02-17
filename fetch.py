@@ -63,6 +63,7 @@ def fetch_and_save_link(url, filename):
 def main():
     args = parser.parse_args()
     identifiers = fetch_identifiers(args.collection)
+    print(f"Found {len(identifiers)} issues.")
     for identifier in identifiers:
         filename = f"{identifier}.pdf"
         link = f"https://archive.org/download/{identifier}/{filename}"
