@@ -9,9 +9,9 @@ import requests
 import time
 from tqdm import tqdm
 
-parser = argparse.ArgumentParser(description='Fetch and save pdfs from an archive.org collection')
-parser.add_argument('collection', help='The name of an archive.org collection.')
-parser.add_argument('--delay', type=int, default=3, help='How long to sleep between fetches.')
+parser = argparse.ArgumentParser(description="Fetch and save pdfs from an archive.org collection")
+parser.add_argument("collection", help="The name of an archive.org collection.")
+parser.add_argument("--delay", type=int, default=3, help="How long to sleep between fetches.")
 
 # pub_chicago-daily-tribune
 
